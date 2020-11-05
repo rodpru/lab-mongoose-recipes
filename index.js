@@ -25,3 +25,15 @@ mongoose
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+
+  Recipe.create({
+    title: 'primeiro',
+    level: 'Easy Peasy',
+    cuisine: 'portuguesa',
+    ingridients: ['salt', 'sugar'],
+    dishType: 'snack',
+    duration: 10,
+    creator: 'MySelf',
+  }).then((res) =>{
+    console.log(`New recipie was just created ${res}`);
+  });
