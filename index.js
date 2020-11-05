@@ -36,7 +36,6 @@ mongoose
   //   creator: 'MySelf',
   // }).then((res) =>{
   //   console.log(`New recipie was just created ${res}`);
-  //    mongoose.connection.close();
   // });
 
 //Recipe.insertMany(data);
@@ -44,16 +43,20 @@ mongoose
 // Recipe.updateOne({title: 'Rigatoni alla Genovese'}, {duration: 100})
 // .then((updatedRigatoni) => {
 //   console.log(`The dish was updated ${updatedRigatoni`);
-//    mongoose.connection.close();
 // });
-// Recipe.find({}, 'title').then((result) =>{
+// const promise1 = Recipe.find({}, 'title').then((result) =>{
 //   console.log(result);
 // })
 
 
-// Recipe.deleteOne({title: 'Carrot Cake'}).then((delCake) =>{
+// const promise2 = Recipe.deleteOne({title: 'Carrot Cake'}).then((delCake) =>{
 //   console.log('Cake deleted');
-//    mongoose.connection.close();
 // });
 
+// Promise.all(promise1, promise2).then((then) => {
+//   console.log('All promises done');
+//   mongoose.connection.close();
+// }).catch((err) => {
+//   console.log('Erro');
+// });
 
